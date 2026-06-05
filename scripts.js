@@ -2,14 +2,13 @@ const botaoAdcionar = document.querySelector('.main-btn')
 const inputTarefa = document.querySelector('.input-bar')
 const listaTarefa = document.querySelector('#todo-list')
 
-botaoAdcionar.addEventListener('click', () => {
-    let textoTarefa = inputTarefa.value
 
-    if (textoTarefa !== '') {
-            let novaTarefa = document.createElement('li')
+function adicionarTarefa(texto){
+    if (texto !== ''){
+        let novaTarefa = document.createElement('li')
             let textoSpan = document.createElement('span')
             textoSpan.classList.add('task-text')
-            textoSpan.innerText = textoTarefa
+            textoSpan.innerText = texto
 
             let botaoExcluir = document.createElement('button')
             botaoExcluir.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
@@ -25,43 +24,23 @@ botaoAdcionar.addEventListener('click', () => {
 
             botaoExcluir.addEventListener('click', (evento) => {
                 evento.stopPropagation()
-                novaTarefa.remove()
+                removerTarefa(novaTarefa)
             })
     }
     inputTarefa.value = ''
-})
+    
+}
 
+function removerTarefa(tarefa){
+    tarefa.remove()
+}
+
+botaoAdcionar.addEventListener('click', () => {
+    adicionarTarefa(inputTarefa.value)
+})
 
 inputTarefa.addEventListener('keydown', (evento) => {
     if (evento.key === 'Enter') {
-        
-        let textoTarefa = inputTarefa.value
-
-        if (textoTarefa !== '') {
-            let novaTarefa = document.createElement('li')
-            let textoSpan = document.createElement('span')
-            textoSpan.classList.add('task-text')
-            textoSpan.innerText = textoTarefa
-
-            let botaoExcluir = document.createElement('button')
-            botaoExcluir.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
-            botaoExcluir.classList.add('btn-exclude')
-            
-
-            novaTarefa.appendChild(textoSpan)
-            novaTarefa.appendChild(botaoExcluir)
-            listaTarefa.appendChild(novaTarefa)
-
-            novaTarefa.addEventListener('click', () => {
-                novaTarefa.classList.toggle('task_concluida')
-            })
-
-            botaoExcluir.addEventListener('click', (evento) => {
-                evento.stopPropagation()
-                novaTarefa.remove()
-            })
-
-        }
-        inputTarefa.value = ''
+        adicionarTarefa(inputTarefa.value)
     }
 })
