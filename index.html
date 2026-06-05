@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -11,36 +11,47 @@
 
 <body>
 
-     <div class="top-title">
-            <h1>To-do List | RGS</h1>
-            <h3>Projeto de To-do List criado para aprendizado pessoal :)</h3>
-        </div>
+    <div class="top-title">
+        <h1>To-do List | RGS</h1>
+        <h3>Projeto de To-do List criado para aprendizado pessoal :)</h3>
+    </div>
 
     <div id="main_container">
-       
-        <div class="top-bar">
-            <input type="text" class="input-bar" placeholder="Digite aqui">
 
-            <button class="main-btn">
+        <div class="top-bar">
+            <label for="input-tarefa" class="sr-only">Nova tarefa</label>
+            <input
+                type="text"
+                id="input-tarefa"
+                class="input-bar"
+                placeholder="Digite aqui"
+                aria-label="Digite uma nova tarefa"
+                autocomplete="off"
+            >
+            <button class="main-btn" aria-label="Adicionar tarefa">
                 Adicionar
             </button>
         </div>
 
         <div class="content">
-            <ul id="todo-list">
-            </ul>
-        </div>  
+            <!-- Empty state: aparece quando não há tarefas -->
+            <div class="empty-state" id="empty-state" aria-live="polite">
+                <i class="fa-regular fa-clipboard" aria-hidden="true"></i>
+                <p>Sua lista está vazia.<br>Adicione uma tarefa acima!</p>
+            </div>
+
+            <ul id="todo-list" aria-label="Lista de tarefas" aria-live="polite"></ul>
+        </div>
+
     </div>
 
     <footer>
-
         <h4>Rafael Silva ©</h4>
-        <a href="www.linkedin.com/in/rafaelgsilva2">Linkedin</a>
-        <a href="https://github.com/Rafaelgs2">Github</a>
-
+        <a href="https://www.linkedin.com/in/rafaelgsilva2" target="_blank" rel="noopener">Linkedin</a>
+        <a href="https://github.com/Rafaelgs2" target="_blank" rel="noopener">Github</a>
     </footer>
+
+    <script src="scripts.js"></script>
+
 </body>
-
-<script src="scripts.js"></script>
-
 </html>
