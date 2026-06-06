@@ -145,7 +145,7 @@ a:hover {
 }
 
 .content {
-    margin: 20px;
+    margin: 12px 0;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
@@ -353,9 +353,13 @@ li {
     }
 
     .top-bar {
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 8px;
+        margin-top: 20px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        padding: 0; /* <-- Mudamos de '0 16px' para '0' */
     }
 
     .input-bar {
@@ -373,4 +377,33 @@ li {
         justify-content: center;
         padding: 16px 12px;
     }
+}
+
+
+.msg-erro {
+    color: #ffffff;
+    background-color: #e74c3c;
+    box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
+    border-radius: 8px; 
+    font-size: 14px; 
+    font-weight: 600; 
+    text-align: center;
+    width: fit-content; 
+    
+    max-height: 0;
+    padding: 0 20px; 
+    margin: 0 auto; 
+    opacity: 0;
+    overflow: hidden; 
+    
+  
+    transition: all 0.3s ease; 
+    pointer-events: none;
+}
+
+.msg-erro.visivel {
+    max-height: 50px; 
+    padding: 10px 20px; 
+    margin: 12px auto 4px auto; 
+    opacity: 1;
 }

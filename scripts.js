@@ -2,6 +2,7 @@ const botaoAdcionar = document.querySelector('.main-btn')
 const inputTarefa = document.querySelector('#input-tarefa')
 const listaTarefa = document.querySelector('#todo-list')
 const emptyState = document.querySelector('#empty-state')
+const msgErro = document.querySelector('#msg-erro')
 
 let tarefasSalvas = JSON.parse(localStorage.getItem('itensSalvos')) || []
 
@@ -25,10 +26,22 @@ inputTarefa.addEventListener('keydown', (evento) => {
 function adicionarTarefa(texto) {
     if (!texto.trim()) return
 
+    let jaExiste = tarefasSalvas.some(item => item.tarefa === texto)
+    
+    if (jaExiste) {
+        msgErro.classList.add('visivel')
+        setTimeout(() => {
+            msgErro.classList.remove('visivel')
+        }, 2000)
+        
+        return 
+    }
+
     let novoObjeto = {
         tarefa: texto,
         status: false
     }
+    
     adicionarTarefaTela(novoObjeto)
     tarefasSalvas.push(novoObjeto)
     salvarTarefas()
