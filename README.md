@@ -2,15 +2,12 @@
 
 > Um aplicativo de gerenciamento de tarefas focado em Experiência do Usuário (UX), Acessibilidade e Clean Code, construído inteiramente com JavaScript.
 
-**[Link para o projeto ao vivo (Deploy) - INSIRA SEU LINK AQUI]**
+**[Link para o projeto ao vivo (Deploy) - ]**
 
 <br>
 
 ## 🎯 O Projeto
 Mais do que uma simples To-Do List, este projeto foi desenvolvido para demonstrar o domínio de fundamentos essenciais do Front-end moderno. O foco principal foi criar uma interface limpa, moderna, com interações responsivas e um código robusto que lida com persistência de dados e regras de negócio inteligentes.
-
-![Demonstração do Projeto](link-para-seu-gif-aqui.gif)
-*(Nota: Substitua o texto acima por um GIF curto da tela mostrando você adicionando uma tarefa, ativando o erro de duplicata e excluindo uma tarefa)*
 
 ---
 
