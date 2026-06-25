@@ -2,7 +2,7 @@
 
 > Um aplicativo de gerenciamento de tarefas focado em Experiência do Usuário (UX), Acessibilidade e Clean Code, construído inteiramente com JavaScript.
 
-**[Link para o projeto ao vivo (Deploy) - ]**
+**[Link para o projeto ao vivo (Deploy) - https://to-do-list-mu-ashy.vercel.app/]**
 
 <br>
 
